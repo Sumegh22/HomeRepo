@@ -27,6 +27,15 @@ It provides uniform build process (maven project can be shared by all the maven 
 It provides project information (log document, cross referenced sources, mailing list, dependency list, unit test reports etc.)
 It is easy to migrate for new features of Maven
 
+## How ? 
+By performing all these tasks automatically !.. 
+
+1. Downloads dependencies in bckg
+2. Putting additional jars in class path, compiling source code into byte code
+3. Running tests
+4. packaging compiled code into deployable artifact such as .war pr .ja
+5. Deploying these artifacts to an application server or respository
+
 Apache Maven helps to manage :
 * Builds
 * Documentation
