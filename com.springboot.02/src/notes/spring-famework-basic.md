@@ -1,7 +1,6 @@
 # Spring Framework
 
 ## Description:
-
 The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.
 A key element of Spring is infrastructural support at the application level: Spring focuses on the "plumbing" of enterprise applications so that teams can focus on application-level business logic, without unnecessary ties to specific deployment environments.
 
@@ -11,13 +10,10 @@ So that the dev can focus upon the apps business logic instead of the non-fucnti
 In simple terms in minimizes boiler plate code for devs
 It is a dependency injection framework which  is a pattern that allows one to create / biild decoupled systems. 
 
-
-
 **Support Policy and Migration**
 For information about minimum requirements, guidance on upgrading from earlier versions and support policies, please check out the official Spring Framework wiki page
 
 **Features**
-
 * Core technologies: dependency injection, events, resources, i18n, validation, data binding, type conversion, SpEL, AOP.
 * Testing: mock objects, TestContext framework, Spring MVC Test, WebTestClient.
 * Data Access: transactions, DAO support, JDBC, ORM, Marshalling XML.
@@ -25,6 +21,7 @@ For information about minimum requirements, guidance on upgrading from earlier v
 * Integration: remoting, JMS, JCA, JMX, email, tasks, scheduling, cache and observability.
 * Languages: Kotlin, Groovy, dynamic languages.
 
+==========================================================================================================
 
 # Why do we use Spring Framework
 
@@ -35,6 +32,8 @@ Foremost amongst these is the Spring Framework’s Inversion of Control (IoC) co
 Coverage of Spring’s integration with AspectJ (currently the richest — in terms of features — and certainly most mature AOP implementation in the Java enterprise space) is also provided.
 
 AOT processing can be used to optimize your application ahead-of-time. It is typically used for native image deployment using GraalVM.
+
+==========================================================================================================
 
 # Core Technologies
 
@@ -56,6 +55,6 @@ The org.springframework.beans and org.springframework.context packages are the b
 In short, the BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality. The ApplicationContext is a complete superset of the BeanFactory and is used exclusively in this chapter in descriptions of Spring’s IoC container. For more information on using the BeanFactory instead of the ApplicationContext, see the section covering the BeanFactory API.
 In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.
 
-
+==========================================================================================================
 
 
