@@ -62,13 +62,47 @@ In Spring, the objects that form the backbone of your application and that are m
 
 
 ## Types of IOC
-A. Bean Factory:
-    1. It is the most basic version of IOC
-    2. Bean Factory must be used only when memory consumption is critical
+**A. Bean Factory:**
+1. It is the most basic version of IOC
+2. Bean Factory must be used only when memory consumption is critical
 
-B. Application context:
-    1. Application context extends features of Bean Factory.
-    2. IoC of type Application context is the most widely used, it has advanced features, that are developed considering enterprise applications in mind.
+**B. Application context:**
+1. Application context extends features of Bean Factory.
+2. IoC of type Application context is the most widely used, it has advanced features, that are developed considering enterprise applications in mind.
 
+**Process:** 
+* Code calls to application context, context calls -> .xml configuration. 
+* xml consists of beans tag, inside which individual bean(s) are te be defined. bean tag takes two arguments
+* **<bean> id = "myVehicle" class="fully_qualified_name ex: com..." </bean>**
+* Any required property can be set up within this bean tag using property tag. 
+
+        <bean id ="" class="" scope="prototype">
+        <property name="" ref""></property>
+        </bean>
 ================================================================================================================
 
+## Dependency Injection:
+
+When one class say class A is dependent on object of another class say B then this object without which class A cannot complete its task is called a dependency
+and class A is called dependent class. 
+So For the sake of class A to function properly we have to ensure that we inject an object of class B in it, this process of inection of object
+with the help of spring is called dependency injection. And it can be achieved in following ways
+1. Constructor injection : Injecting beans right when constructor of dependent class is invoked.
+2. Setter/Property injection : using setter methods to set value of objects
+3. Field injection: using properties to set value of a dependency.
+
+================================================================================================================
+## Spring Bean Scopes:
+Scope means lifecycle of a bean, and its types are as follows 
+1. **Singleton :** default lifecycle of a bean created by, meaning, only one instance of an object (dependency) will be created. And whenever invoked, the call will be made to the same object. For example, if a bean of type Vehicle is created by Spring IoC then
+
+        Vehicle vehicle1 = context.getBean("myVehicle", Vehicle.class);
+        Vehicle vehicle2 = context.getBean("myVehicle", Vehicle.class); 
+ will returm the same object
+
+
+2. **Prototype :** 
+
+3. Request : used in web-app
+4. Session : used in web-app
+5. Global-session : used in web-app
