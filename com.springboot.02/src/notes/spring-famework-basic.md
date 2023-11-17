@@ -50,11 +50,25 @@ The org.springframework.beans and org.springframework.context packages are the b
 * Event publication
  
 * Application-layer specific contexts such as the WebApplicationContext for use in web applications.
- 
 
 In short, the BeanFactory provides the configuration framework and basic functionality, and the ApplicationContext adds more enterprise-specific functionality. The ApplicationContext is a complete superset of the BeanFactory and is used exclusively in this chapter in descriptions of Spring’s IoC container. For more information on using the BeanFactory instead of the ApplicationContext, see the section covering the BeanFactory API.
 In Spring, the objects that form the backbone of your application and that are managed by the Spring IoC container are called beans. A bean is an object that is instantiated, assembled, and managed by a Spring IoC container. Otherwise, a bean is simply one of many objects in your application. Beans, and the dependencies among them, are reflected in the configuration metadata used by a container.
 
-==========================================================================================================
+## Summary:
+1. In simple words we need spring/ boot to ease out development by externalizing maintaining the lifecycle of objects 
+2. IOC container is responsible to instantiate, configure and assemble the objects. 
+3. The IoC container gets this information through configuration.
+4. We can configure the IOC container using an .xml, annotations or by Java configuration class
 
+
+## Types of IOC
+A. Bean Factory:
+    1. It is the most basic version of IOC
+    2. Bean Factory must be used only when memory consumption is critical
+
+B. Application context:
+    1. Application context extends features of Bean Factory.
+    2. IoC of type Application context is the most widely used, it has advanced features, that are developed considering enterprise applications in mind.
+
+================================================================================================================
 
