@@ -121,9 +121,9 @@ All these three injection can be achived by Annotation.
 However, Filed injection cannot be achived by .xml application context, but the other two methods const and setter injection can be done using .xml
 
 ### Constructor-injection vs Field-injection vs Setter-injection:
-1. In Constructor-injection, the @Autowired component has to be applied on top of constructor and the DI is perfomed by injecting bean using constructor.
-2. In Setter-injection, 
-3. Field-injection, 
+1. In Constructor-injection, the @Autowired annotation has to be applied on top of constructor and the DI is perfomed by injecting bean using constructor.
+2. In Setter-injection, the @Autowired annotation has to be applied on top of setter method which is setting value of the property (bean) which is a component or dependency for current class
+3. Field-injection, the easiest of 'em in this case, apply @Autowired annotation, right on top of the field or variable declaration. and Spring will handle the rest
 
 
 
