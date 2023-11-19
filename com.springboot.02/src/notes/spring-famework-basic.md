@@ -129,11 +129,14 @@ However, Filed injection cannot be achived by .xml application context, but the 
 
 ### @Component: or @Component("bean_id")
 1. When you apply a @Component annotation on declaration of any class, it tells spring framework that this class is now a spring bean and its lifecycle has to be managed by Spring.
-2. By default the Bean name (id) is used in camelCased classname.
+2. by-default the Bean name (id) is used in camelCased classname.
 
 ### @Autowired:
 1. Annotation used to inject the @Component beans. 
 2. Using this annotation, spring starts to scan the classpath application context to look for a suitable bean that is to be injected
+
+### @Qualifier:
+1. When multiple beans of same type are available then, Spring framework gets confused a bit and throws an exception. It needs an explicit instruction, about which bean is to be injected when needed.
 
 ============================================================================================
 
