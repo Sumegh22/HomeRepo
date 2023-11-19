@@ -87,14 +87,14 @@ When one class say class A is dependent on object of another class say B then th
 and class A is called dependent class. 
 So For the sake of class A to function properly we have to ensure that we inject an object of class B in it, this process of inection of object
 with the help of spring is called dependency injection. And it can be achieved in following ways
-1. Constructor injection : Injecting beans right when constructor of dependent class is invoked.
-2. Setter/Property injection : using setter methods to set value of objects
-3. Field injection: using properties to set value of a dependency.
+1. **Constructor injection :** Injecting beans right when constructor of dependent class is invoked.
+2. **Setter/Property injection :** using setter methods to set value of objects
+3. **Field injection:** using properties to set value of a dependency.
 
 ================================================================================================================
 ## Spring Bean Scopes:
 Scope means lifecycle of a bean, and its types are as follows 
-1. **Singleton :** default lifecycle of a bean created by, meaning, only one instance of an object (dependency) will be created. And whenever invoked, the call will be made to the same object. For example, if a bean of type Vehicle is created by Spring IoC then
+1. **Singleton :** default lifecycle of a bean created by, meaning, only one instance of an object (dependency) will be created. And whenever invoked, the call will be made to the same object, the object is shared. For example, if a bean of type Vehicle is created by Spring IoC then
 
         Vehicle vehicle1 = context.getBean("myVehicle", Vehicle.class);
         Vehicle vehicle2 = context.getBean("myVehicle", Vehicle.class); 
@@ -103,6 +103,37 @@ Scope means lifecycle of a bean, and its types are as follows
 
 2. **Prototype :** 
 
+
+
+        <bean id ="" class="" scope="prototype">
+        <property name="" ref""></property>
+        </bean>
+
 3. Request : used in web-app
 4. Session : used in web-app
 5. Global-session : used in web-app
+
+================================================================================================================
+## Annotations:
+
+Dependency injection in spring can be done via three methods, Constructor injection, Setter injection and FIeld Injection
+All these three injection can be achived by Annotation. 
+However, Filed injection cannot be achived by .xml application context, but the other two methods const and setter injection can be done using .xml
+
+### Constructor-injection vs Field-injection vs Setter-injection:
+1. In Constructor-injection, the @Autowired component has to be applied on top of constructor and the DI is perfomed by injecting bean using constructor.
+2. In Setter-injection, 
+3. Field-injection, 
+
+
+
+### @Component: or @Component("bean_id")
+1. When you apply a @Component annotation on declaration of any class, it tells spring framework that this class is now a spring bean and its lifecycle has to be managed by Spring.
+2. By default the Bean name (id) is used in camelCased classname.
+
+### @Autowired:
+1. Annotation used to inject the @Component beans. 
+2. Using this annotation, spring starts to scan the classpath application context to look for a suitable bean that is to be injected
+
+================================================================================================================
+
