@@ -79,7 +79,7 @@ In Spring, the objects that form the backbone of your application and that are m
         <bean id ="" class="" scope="prototype">
         <property name="" ref""></property>
         </bean>
-================================================================================================================
+============================================================================================
 
 ## Dependency Injection:
 
@@ -91,7 +91,7 @@ with the help of spring is called dependency injection. And it can be achieved i
 2. **Setter/Property injection :** using setter methods to set value of objects
 3. **Field injection:** using properties to set value of a dependency.
 
-================================================================================================================
+============================================================================================
 ## Spring Bean Scopes:
 Scope means lifecycle of a bean, and its types are as follows 
 1. **Singleton :** default lifecycle of a bean created by, meaning, only one instance of an object (dependency) will be created. And whenever invoked, the call will be made to the same object, the object is shared. For example, if a bean of type Vehicle is created by Spring IoC then
@@ -113,7 +113,7 @@ Scope means lifecycle of a bean, and its types are as follows
 4. Session : used in web-app
 5. Global-session : used in web-app
 
-================================================================================================================
+============================================================================================
 ## Annotations:
 
 Dependency injection in spring can be done via three methods, Constructor injection, Setter injection and FIeld Injection
@@ -135,5 +135,5 @@ However, Filed injection cannot be achived by .xml application context, but the 
 1. Annotation used to inject the @Component beans. 
 2. Using this annotation, spring starts to scan the classpath application context to look for a suitable bean that is to be injected
 
-================================================================================================================
+============================================================================================
 
