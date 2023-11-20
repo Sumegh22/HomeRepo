@@ -136,7 +136,47 @@ However, Filed injection cannot be achived by .xml application context, but the 
 2. Using this annotation, spring starts to scan the classpath application context to look for a suitable bean that is to be injected
 
 ### @Qualifier:
-1. When multiple beans of same type are available then, Spring framework gets confused a bit and throws an exception. It needs an explicit instruction, about which bean is to be injected when needed.
+1. When multiple beans of same type are available then, Spring framework gets confused a bit and throws an exception (UnsatisfiedDependencyException). It needs an explicit instruction, about which bean is to be injected when needed.
+2. Qualifier annotation can be used in all three methods, with field injection, setter injection and with constructor injection
+
+   | Filed injection                         | Setter injection                                              | Constructor Injection                                                        |
+   |-----------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------|
+   | @Autowired                              | @Autowired                                                    | @Autowired                                                                   |
+   | @Qualifier                              | @Qualifier                                                    | public Vehicle ( @Qualifier ("noDiscount") DiscountService discountService){ |
+   | private DiscountService discountService | public setDiscountService (DiscountService discountService ){ | this.discountService = discountService }                                     |
+   |                                         | this.discountService = discountService}                       |                                                                              |
+
+### @Scope:
+1. The @Scope annotation can be used to define scope of a bean, this has to be attached to a class in same fashion as the @Component annotation
+2. Like in the declaration of class name
+    
+       @Component
+       @Scope("prototype")
+       public class Fuel {...}
+
+### @Configuration:
+1. This annotation tells spring to ignore the .xml file for configuration and instead take configurations (beans instantiation etc.) from class with @Configuration annotations
+
+### @ComponentScan: 
+1. @ComponentScan("base.package.path") : This annotation tells spring to look for the beans in the given base package
+   When used this annotation, to get the application context, use the below class object
+   
+       AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("ClassNameWhichHasConfigAnnotation.class")
+       context.getBean("beanName", Vehicle.class);
+
+### PropertySource("NameOfPropertyFile.properties")
+1.  To give location of property file
+
+### @Value:
+1. Using @Value annotation we can inject values to properties from the application.properties file using placeholders
+
+        @Value("${customer.propuserName}")
+        private String userName
+
+### @Bean:
+1. Create a method and annotate it as @Bean, then a bean of the return type will be created
+2. Whatever is the name of method, that will be considered as bean id
+
 
 ============================================================================================
 
